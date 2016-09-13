@@ -1,0 +1,12 @@
+//
+// TEST 06
+//
+
+switch(c)
+{
+case "a": Print(c); break;
+case "b": Print(c); break;
+case "c": Print(c); break;
+default: break;
+}
+

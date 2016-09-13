@@ -1,0 +1,17 @@
+//
+// TEST 03
+//
+
+if (a==1)
+{
+	c = 0;
+} 
+else if (a==2)
+{
+    c = -2;
+} 
+else if (a==3) { //test
+    c = -3;
+}
+else if (a==4) c= -4;
+

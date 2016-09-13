@@ -1,0 +1,12 @@
+//
+// TEST 07
+//
+
+FUNCTION hoge(x,y) 
+{
+   return x+y;
+}
+
+var c = hoge(1,2);
+
+
