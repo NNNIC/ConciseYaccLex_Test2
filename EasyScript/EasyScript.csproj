@@ -44,8 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="lextool\runtime\funcutil.cs" />
-    <Compile Include="lextool\runtime\mainprocessfunc.cs" />
-    <Compile Include="lextool\runtime\preprocessfunc.cs" />
+    <Compile Include="lextool\runtime\processfunc.cs" />
     <Compile Include="lextool\sys.cs" />
     <Compile Include="lextool\process.cs" />
     <Compile Include="lextool\y\syntax\lex.cs" />

@@ -28,6 +28,11 @@ namespace lextool
             int tp = YDEF.get_type(s);
             return IsType(tp);
         }
+        public bool IsType(object[] o)
+        {
+            int tp= YDEF.get_type(o);
+            return IsType(tp);
+        }
         public string GetString()
         {
             if (s != null) return s;
@@ -164,7 +169,11 @@ namespace lextool
 
             return null;
         }
-
+        public VALUE FindValueByTravarse(object[] o) //指定タイプをトラバースして検索　(listを辿りながら)
+        {
+            var type = YDEF.get_type(o);
+            return FindValueByTravarse(type);
+        }
         public bool ReplaceValueByTravarse(int itype, VALUE dst)//トラバースして、最初に見つけたのを入れ替える。
         {
             if (itype==type)//自身の入れ替えはＮＧ
@@ -226,6 +235,13 @@ namespace lextool
         }
         #endregion
 
+        #region runtime
+        public VALUE list_at(int n)
+        {
+            if (n<0 || n>=list.Count) return null;
+            return list[n];
+        }
+        #endregion
         #region static 
         public static VALUE BOF()
         {

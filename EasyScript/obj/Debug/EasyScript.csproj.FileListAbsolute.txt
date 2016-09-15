@@ -46,3 +46,9 @@ C:\Users\gea01\Documents\ConciseYaccLex_Test2\EasyScript\obj\Debug\EasyScript.pd
 C:\Users\gea01\Documents\ConciseYaccLex_Test2\EasyScript\bin\Debug\EasyScript.exe
 C:\Users\gea01\Documents\ConciseYaccLex_Test2\EasyScript\bin\Debug\EasyScript.pdb
 C:\Users\gea01\Documents\ConciseYaccLex_Test2\EasyScript\obj\Debug\EasyScript.csprojResolveAssemblyReference.cache
+N:\ConciseYaccLex_Test2\EasyScript\bin\Debug\EasyScript.exe.config
+N:\ConciseYaccLex_Test2\EasyScript\obj\Debug\EasyScript.exe
+N:\ConciseYaccLex_Test2\EasyScript\obj\Debug\EasyScript.pdb
+N:\ConciseYaccLex_Test2\EasyScript\bin\Debug\EasyScript.exe
+N:\ConciseYaccLex_Test2\EasyScript\bin\Debug\EasyScript.pdb
+N:\ConciseYaccLex_Test2\EasyScript\obj\Debug\EasyScript.csprojResolveAssemblyReference.cache

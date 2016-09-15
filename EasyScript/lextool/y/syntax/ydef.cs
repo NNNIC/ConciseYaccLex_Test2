@@ -263,7 +263,7 @@ namespace lextool
 
         public static object[] sx_case_clause     =   { "sx_case_clause",
                                                        1026,
-                                                           YDEF.CASE, "sx_expr", ":", "sx_sentence",       __MAKE__,YCODE.DO_NEW, 0,1,2,3,
+                                                           YDEF.CASE, "sx_expr", ":",                       __MAKE__,YCODE.DO_NEW, 0,1,2,
                                                       };
         public static object[] sx_default_clause  =   { "sx_default_clause",
                                                        1027,
