@@ -33,7 +33,7 @@ namespace lextool
         public static Func<int, VALUE[],int[], VALUE> DO_ADDHEAD = (type, args,idx) => {
             var v = args[idx[0]];
             if (v.list==null) v.list = new List<VALUE>();
-            for(int i=idx.Length-1; i>=1; i++)
+            for(int i=idx.Length-1; i>=1; i--)
             {
                 var n = idx[i];
                 if (n>=0 && n<args.Length) v.list.Insert(0,args[idx[i]]);

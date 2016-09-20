@@ -140,7 +140,7 @@ namespace lextool
                                                      };
         public static object[] sx_for_blanket     =  {  "sx_for_blanket",
                                                         1008,
-                                                            "(","sx_def_var_clause","sx_expr_clause","sx_expr",")", __MAKE__, YCODE.DO_NEW,0,1,2,3,4,
+                                                            "(","sx_def_var_clause","sx_expr_clause",NAME,"=","sx_expr",")", __MAKE__, YCODE.DO_NEW,0,1,2,3,4,5,6,
                                                             __OR__,
                                                             "(","sx_expr_clause","sx_expr_clause","sx_expr",")",    __MAKE__, YCODE.DO_NEW,0,1,2,3,4,
                                                      };
@@ -267,7 +267,7 @@ namespace lextool
                                                       };
         public static object[] sx_default_clause  =   { "sx_default_clause",
                                                        1027,
-                                                           YDEF.DEFAULT, ":", "sx_sentence",               __MAKE__,YCODE.DO_NEW, 0,1,2,
+                                                           YDEF.DEFAULT, ":",                              __MAKE__,YCODE.DO_NEW, 0,1,
                                                       };
         public static object[] sx_break_clause    =   { "sx_break_clause",
                                                        1028,

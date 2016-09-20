@@ -6,7 +6,16 @@ FUNCTION hoge(x,y)
 {
    return x+y;
 }
+FUNCTION hehe() 
+{
+   ConsoleWrite("A");
+}
 
 var c = hoge(1,2);
 
+ConsoleWriteLine("hoge()=" + c);
 
+hehe();
+hehe();
+hehe();
+ConsoleWriteLine();

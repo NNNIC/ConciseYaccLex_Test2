@@ -41,6 +41,11 @@ namespace lextool
             {
                 sys.error("Not executable. Check Line " + (errorline + 1));
             }
+
+            //実行
+            sys.logline("\n\n*Execute! \n");
+            runtime.predefinedfunc.Init();
+            runtime.processfunc.Run(executable_value_list[0][0]);
 #if x
 
             //実行
@@ -53,7 +58,7 @@ namespace lextool
 
 
 
-            Console.WriteLine("end");
+            Console.WriteLine("\nend");
         }
     }
 }

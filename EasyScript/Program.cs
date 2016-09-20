@@ -10,6 +10,7 @@ namespace EasyScript
     {
         static void Main(string[] args)
         {
+
             lextool.process.Run(args[0]);
 
             System.Diagnostics.Debugger.Break();

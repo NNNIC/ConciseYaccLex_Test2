@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="lextool\runtime\funcutil.cs" />
+    <Compile Include="lextool\runtime\predefinedfunc.cs" />
     <Compile Include="lextool\runtime\processfunc.cs" />
     <Compile Include="lextool\sys.cs" />
     <Compile Include="lextool\process.cs" />

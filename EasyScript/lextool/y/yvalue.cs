@@ -35,12 +35,24 @@ namespace lextool
         }
         public string GetString()
         {
-            if (s != null) return s;
+            if (o != null) return o.ToString();
             if (list != null && list.Count == 1)
             {
                 return list[0].GetString();
             }
             return null;
+        }
+        public double GetNumber()
+        {
+            if (o!=null && o.GetType()==typeof(double))
+            {
+                return (double)o;
+            }
+            if (list !=null && list.Count==1)
+            {
+                return list[0].GetNumber();
+            }
+            return 0;
         }
         public string GetTerminal()
         {
