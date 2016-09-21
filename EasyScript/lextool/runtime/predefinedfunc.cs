@@ -46,19 +46,19 @@ namespace lextool.runtime
         static object Print(object[] ol)
         {
             var o = ol_at(ol,0);
-            Console.Write(o);
+            Console.Write(convert(o));
             return null;
         }
         static object ConsoleWrite(object[] ol)
         {
             var o = ol_at(ol,0);
-            Console.Write(o);
+            Console.Write(convert(o));
             return null;
         }
         static object ConsoleWriteLine(object[] ol)
         {
             var o = ol_at(ol,0);
-            Console.WriteLine(o);
+            Console.WriteLine(convert(o));
             return null;
         }
 
@@ -67,6 +67,12 @@ namespace lextool.runtime
         {
             if (ol==null || n < 0 || ol.Length<=n ) return null;
             return ol[n];
+        }
+        static string convert(object o)
+        {
+            if (o==null) return "";
+            var s = o.ToString();
+            return s.Replace("\\n","\n");
         }
     }
 }

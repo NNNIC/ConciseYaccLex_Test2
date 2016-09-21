@@ -47,7 +47,20 @@ namespace lextool
 
             public override string ToString()
             {
-                return name;
+                string s = null;
+                list.ForEach(i=> {
+                    if (s!=null) s+=",";
+                    if (i.GetType()==typeof(int))
+                    {
+                        s+=YDEF.get_name((int)i);
+                    }
+                    else
+                    {
+                        s+=i.ToString();
+                    }
+
+                });
+                return name +":"+s;
             }
         }
         public static List<TreeSet> get_syntax_set(object[] syntax_tree)

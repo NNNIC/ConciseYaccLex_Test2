@@ -28,7 +28,7 @@ namespace lextool
 
             //ダンプ
             sys.logline("\n[executable_value_list]\n");
-            YDEF_DEBUG.PrintLiterally(executable_value_list[0]);
+            YDEF_DEBUG.PrintListValue(executable_value_list[0]);
             sys.logline("\n");
 
             //リストの整合性テスト
@@ -46,17 +46,6 @@ namespace lextool
             sys.logline("\n\n*Execute! \n");
             runtime.predefinedfunc.Init();
             runtime.processfunc.Run(executable_value_list[0][0]);
-#if x
-
-            //実行
-            sys.logline("\n\n*Execute! \n");
-            foreach (var l in executable_value_list)
-            {
-                runtime.MainProcessFunction.ExecuteSentence(l);
-            }
-#endif
-
-
 
             Console.WriteLine("\nend");
         }

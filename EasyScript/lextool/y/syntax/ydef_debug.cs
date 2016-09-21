@@ -88,13 +88,13 @@ namespace lextool
         #endregion
 
         #region Print
-        public static void PrintLiterally(List<VALUE> l)
+        public static void PrintListValue(List<VALUE> l)
         {
             var s = "";
-            l.ForEach(v=>s+=_print(v)); 
+            l.ForEach(v=>s+=PrintValue(v)); 
             sys.logline(s);
         }
-        private static string _print(VALUE v)
+        public static string PrintValue(VALUE v)
         {
             foreach(var e in Enum.GetValues(typeof(TOKEN)))
             {
@@ -121,7 +121,7 @@ namespace lextool
             string s = "";
             if (v.list!=null)
             {
-                v.list.ForEach(i=>s+=conv(_print(i)));
+                v.list.ForEach(i=>s+=conv(PrintValue(i)));
             }
             return s;
         }

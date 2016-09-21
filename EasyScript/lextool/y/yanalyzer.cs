@@ -41,17 +41,29 @@ namespace lextool
                     if (bNeedLoop) break; //最初から
                 }
 
-                if (!bNeedLoop) break;
+                if (bNeedLoop)
+                { 
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
             }
 
             return true;
         }
         private static bool _check_syntax(List<VALUE> list, YDEF.TreeSet ts)
         {
-            for(int i = 0; i<list.Count; i++)
+            int start = find_deepest_bracket(list);                          //括弧の中を優先処理
+            int end   = start >=0 ? list.FindIndex(start,v=>v.s==")") : -1;  //括弧の中を優先処理
+            if (start < 0) start = 0;
+            if (end < 0) end = list.Count;
+            for(var i = start; i<end; i++)
             {
                 if (_isMatchAndMake(list,i,ts))
                 {
+                    sys.logline("\n match ..." + ": list[" + i + "] " + ts.ToString() +">" + YDEF_DEBUG.PrintValue(list[i]));
                     return true;
                 }
             }
@@ -78,16 +90,18 @@ namespace lextool
                 VALUE nv = null;
                 if (o.GetType() == typeof(string))
                 {
-                    if (v.GetString() != (string)o) return false;
-                    nv = v.GetTerminalValue_ascent();
+                    if (v.GetString() == (string)o)
+                    { 
+                        nv = v.GetTerminalValue_ascent();
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
                     tstype = (int)o;
-                    if (v.type == YDEF.get_type("sx_for_clause") && tstype == YDEF.get_type("sx_for_clause"))
-                    {
-                        Console.WriteLine("Debug");
-                    }
                     if (tstype == YDEF.REST) // ※RESTは特殊処理。EOLまでのすべて(除EOL)が入る
                     {
                         removelength--; //本VALUE分を事前に引く
@@ -115,8 +129,14 @@ namespace lextool
                     }
                     else
                     {
-                        if (!v.IsType(tstype)) return false;
-                        nv = v.FindValueByTravarse(tstype);
+                        if (v.IsType(tstype))
+                        { 
+                            nv = v.FindValueByTravarse(tstype);
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                 }
 
@@ -140,6 +160,33 @@ namespace lextool
             list.Insert(index,newv);
 
             return true;
+        }
+
+        // --- tool for this class
+        private static int find_deepest_bracket(List<VALUE> l)
+        {
+            int find = -1;
+            int max_nextcount = 0;
+            int nestcount = 0;
+            for(int n = 0; n<l.Count; n++)
+            { 
+                var i = l[n];
+                var str = i.GetString();
+                if (str=="(")
+                {
+                    nestcount++;
+                    if (max_nextcount<nestcount)
+                    {
+                        max_nextcount = nestcount;
+                        find = n;
+                    }
+                }
+                else if (str == ")")
+                {
+                    nestcount--;
+                }
+            }
+            return find;
         }
     }
 }

@@ -188,6 +188,10 @@ namespace lextool
                                                              __OR__,
                                                              NUM,                                           __MAKE__, YCODE.DO_NEW, 0,
                                                              __OR__,
+                                                             "sx_expr_blanket",                             __MAKE__, YCODE.DO_NEW, 0,
+                                                             __OR__,
+                                                             "sx_func",                                     __MAKE__, YCODE.DO_NEW, 0,
+                                                             __OR__,
                                                              "sx_expr",OP3,"sx_expr",                       __MAKE__, YCODE.DO_NEW, 0, 1, 2,
                                                              __OR__,
                                                              "sx_expr",OP4,"sx_expr",                       __MAKE__, YCODE.DO_NEW, 0, 1, 2,
@@ -207,10 +211,6 @@ namespace lextool
                                                              "-", "sx_expr",                                __MAKE__, YCODE.DO_NEW, 0, 1,
                                                              __OR__,
                                                              "+", "sx_expr",                                __MAKE__, YCODE.DO_NEW, 0, 1,
-                                                             __OR__,
-                                                             "sx_expr_blanket",                             __MAKE__, YCODE.DO_NEW, 0,
-                                                             __OR__,
-                                                             "sx_func",                                     __MAKE__, YCODE.DO_NEW, 0
                                                       };
 
         public static object[] sx_expr_blanket     =  { "sx_expr_blanket",
